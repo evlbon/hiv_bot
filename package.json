@@ -1,0 +1,16 @@
+{
+  "name": "hiv_bot",
+  "version": "1.0.0",
+  "description": "bot for get info abt hiv quest",
+  "main": "src/main.js",
+  "author": "Eugene Bondarev",
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "^3.5.9",
+    "telegraf": "^3.38.0"
+  },
+  "scripts": {
+    "start": "node src/main.js",
+    "dev": "nodemon src/main.js"
+  }
+}
