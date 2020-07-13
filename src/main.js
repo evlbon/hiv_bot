@@ -9,10 +9,11 @@ const bot = new Telegraf(token);
 mongoClient.connect((err, client) => {
     const db = client.db("hiv");
     const users = db.collection("users");
+    const addedUsers = db.collection("addedUsers");
     const passage = db.collection("passage");
 
     bot.command('info', async (ctx) => {
-        const usersCount = await users.find({}).count();
+        const usersCount = await users.find({}).count() + await addedUsers.find({}).count();
         const passageCount = await passage.find({}).count();
         ctx.reply(`Всего пользователей: ${usersCount}\nВошли в игру: ${passageCount}`)
     });
