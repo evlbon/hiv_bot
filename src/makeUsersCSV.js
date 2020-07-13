@@ -10,7 +10,7 @@ const ObjectsToCsv = require('objects-to-csv');
 const bot = new Telegraf(token);
 
 mongoClient.connect((err, client) => {
-    const db = client.db("hiv_dump");
+    const db = client.db("hiv");
     const users = db.collection("users");
     const player = db.collection("player");
     const passage = db.collection("passage");
